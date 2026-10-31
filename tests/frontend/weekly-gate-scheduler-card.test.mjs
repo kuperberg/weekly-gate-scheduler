@@ -23,3 +23,10 @@ test("time inputs keep hour-minute order inside the RTL card", () => {
   const source = readFileSync(path, "utf8");
   assert.match(source, /input\[type=time\][^{]*\{[^}]*direction:ltr/);
 });
+
+test("event times are submitted together only from an explicit save button", () => {
+  const source = readFileSync(path, "utf8");
+  assert.match(source, /class="save"[^>]*>שמירה</);
+  assert.match(source, /querySelector\("\.save"\)\.onclick=save/);
+  assert.doesNotMatch(source, /querySelectorAll\("\.start,\.end,\.next"\).*onchange=save/);
+});
