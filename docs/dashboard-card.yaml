@@ -1,0 +1,3 @@
+type: custom:weekly-gate-scheduler-card
+entry_id: YOUR_CONFIG_ENTRY_ID
+status_entity: sensor.YOUR_STATUS_ENTITY

@@ -1,0 +1,12 @@
+open_now_until_0400:
+  name: פתיחה עכשיו עד מחר 04:00
+open_now_until_1700:
+  name: פתיחה עכשיו עד 17:00
+finish_active:
+  name: סיום פתיחה וחזרה למצב אפליקציה
+upsert_event:
+  name: הוספה או עדכון אירוע
+delete_event:
+  name: מחיקת אירוע
+set_event_enabled:
+  name: הפעלה או השבתה של אירוע

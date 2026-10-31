@@ -1,0 +1,23 @@
+{
+  "title": "לוח שבועי לשער",
+  "config": {
+    "step": {
+      "user": {
+        "title": "חיבור למצב הממסר של Palgate",
+        "description": "בחר את ישות מצב הממסר של שער .",
+        "data": {
+          "name": "שם מקומי לתצוגה",
+          "relay_entity_id": "מצב הממסר של Palgate"
+        }
+      }
+    },
+    "error": {
+      "entity_not_found": "הישות לא נמצאה",
+      "not_select": "יש לבחור ישות מסוג select",
+      "missing_options": "הישות אינה תומכת במצבים normal ו-hold_open"
+    },
+    "abort": {
+      "already_configured": "הישות כבר מחוברת ללוח שבועי"
+    }
+  }
+}

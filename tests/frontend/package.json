@@ -1,0 +1,1 @@
+{"scripts":{"test":"node --test weekly-gate-scheduler-card.test.mjs"},"type":"module"}
