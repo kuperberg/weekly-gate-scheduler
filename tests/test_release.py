@@ -9,7 +9,7 @@ def test_release_files_and_versions_are_consistent():
     for name in ("README.md", "LICENSE", "hacs.json", ".github/workflows/validate.yml"):
         assert (ROOT / name).is_file(), name
     manifest = json.loads((ROOT / "custom_components/weekly_gate_scheduler/manifest.json").read_text())
-    assert manifest["version"] == "0.1.2"
+    assert manifest["version"] == "0.1.3"
     assert (ROOT / "custom_components/weekly_gate_scheduler/www/weekly-gate-scheduler-card.js").is_file()
 
 
