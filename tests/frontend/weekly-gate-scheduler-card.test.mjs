@@ -18,3 +18,8 @@ test("card contains approved RTL controls and seven empty-capable days", () => {
   assert.match(source, /start_time:"17:00",end_time:"18:00",end_next_day:false,enabled:false/);
   assert.match(source, /if \(!customElements\.get\("weekly-gate-scheduler-card"\)\)/);
 });
+
+test("time inputs keep hour-minute order inside the RTL card", () => {
+  const source = readFileSync(path, "utf8");
+  assert.match(source, /input\[type=time\][^{]*\{[^}]*direction:ltr/);
+});

@@ -2,7 +2,7 @@ from custom_components.weekly_gate_scheduler.frontend import resource_url
 
 
 def test_resource_url_is_versioned_and_stable():
-    assert resource_url("0.1.0") == "/weekly_gate_scheduler/weekly-gate-scheduler-card.js?v=0.1.0"
+    assert resource_url("0.1.1") == "/weekly_gate_scheduler/weekly-gate-scheduler-card.js?v=0.1.1"
 
 
 def test_resource_url_rejects_unsafe_version():
