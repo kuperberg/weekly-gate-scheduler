@@ -1,5 +1,9 @@
 # לוח שבועי לשער
 
+<p align="center">
+  <img src="custom_components/weekly_gate_scheduler/brand/icon@2x.png" width="180" alt="Weekly Gate Scheduler icon — gate with clock">
+</p>
+
 אינטגרציית Home Assistant לניהול לוח פתיחה מקומי לשבוע הנוכחי באמצעות ישות Relay Mode קיימת של Palgate. התכנון נשמר ב־Home Assistant; הפקודות עצמן עדיין דורשות אינטרנט וענן Palgate.
 
 ## התקנה דרך HACS
