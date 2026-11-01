@@ -15,7 +15,7 @@ test("card contains approved RTL controls and seven empty-capable days", () => {
   assert.match(source, /לא הוגדרו אירועים/);
   assert.match(source, /end_next_day/);
   assert.match(source, /weekly-gate-scheduler-card/);
-  assert.match(source, /start_time:"17:00",end_time:"18:00",end_next_day:false,enabled:false/);
+  assert.match(source, /start_time:"17:00",end_time:"00:00",end_next_day:true,enabled:false/);
   assert.match(source, /if \(!customElements\.get\("weekly-gate-scheduler-card"\)\)/);
 });
 
@@ -53,4 +53,15 @@ test("event layout preserves the complete same-day or next-day label", () => {
   assert.match(source, /class="row-actions"/);
   assert.match(source, /minmax\(170px,1\.4fr\)/);
   assert.match(source, /\.next-field\{grid-column:span 2\}/);
+});
+
+test("new events default to midnight on the following day", () => {
+  const source = readFileSync(path, "utf8");
+  assert.match(source, /start_time:"17:00",end_time:"00:00",end_next_day:true,enabled:false/);
+});
+
+test("all three quick actions stay compact in one mobile row", () => {
+  const source = readFileSync(path, "utf8");
+  assert.match(source, /@container\(max-width:700px\)[^{]*\{[^}]*\.actions\{grid-template-columns:repeat\(3,minmax\(0,1fr\)\)/);
+  assert.match(source, /\.action\{min-height:72px;padding:6px 4px;font-size:12px/);
 });
