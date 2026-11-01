@@ -46,3 +46,11 @@ test("status timing and details use an enlarged status-only style", () => {
   const source = readFileSync(path, "utf8");
   assert.match(source, /\.status \.muted\{[^}]*font-size:16px/);
 });
+
+test("event layout preserves the complete same-day or next-day label", () => {
+  const source = readFileSync(path, "utf8");
+  assert.match(source, /class="next-field"/);
+  assert.match(source, /class="row-actions"/);
+  assert.match(source, /minmax\(170px,1\.4fr\)/);
+  assert.match(source, /\.next-field\{grid-column:span 2\}/);
+});
