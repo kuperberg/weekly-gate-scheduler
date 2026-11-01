@@ -31,7 +31,7 @@ async def async_setup_entry(hass, entry) -> bool:
     domain_data[entry.entry_id] = runtime
     register_services(hass)
     if not domain_data.get("_frontend_registered"):
-        await async_register_frontend(hass, "0.1.6")
+        await async_register_frontend(hass, "0.1.7")
         domain_data["_frontend_registered"] = True
     async def reconcile(_=None):
         scheduler.schedule = roll_schedule(scheduler.schedule, datetime.now(JERUSALEM))

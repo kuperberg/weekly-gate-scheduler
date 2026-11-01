@@ -44,7 +44,7 @@ test("quick actions have no dash and a successful event save is confirmed", () =
 
 test("status timing and details use an enlarged status-only style", () => {
   const source = readFileSync(path, "utf8");
-  assert.match(source, /\.status \.muted\{[^}]*font-size:16px/);
+  assert.match(source, /\.status \.muted\{[^}]*font-size:15px/);
 });
 
 test("event layout preserves the complete same-day or next-day label", () => {
@@ -64,4 +64,13 @@ test("all three quick actions stay compact in one mobile row", () => {
   const source = readFileSync(path, "utf8");
   assert.match(source, /@container\(max-width:700px\)[^{]*\{[^}]*\.actions\{grid-template-columns:repeat\(3,minmax\(0,1fr\)\)/);
   assert.match(source, /\.action\{min-height:72px;padding:6px 4px;font-size:12px/);
+});
+
+test("status and weekly schedule spacing stay compact with color on both sides", () => {
+  const source = readFileSync(path, "utf8");
+  assert.match(source, /\.wrap\{[^}]*gap:8px/);
+  assert.match(source, /border-inline:7px solid/);
+  assert.match(source, /padding:10px 14px/);
+  assert.match(source, /class="panel schedule-panel"/);
+  assert.match(source, /\.schedule-panel h2\{margin:0 0 2px/);
 });
